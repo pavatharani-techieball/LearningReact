@@ -1,0 +1,154 @@
+<html>
+<head>
+<title>Account</title>
+<style>
+*{padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+font-family:Arial;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+container{
+width:300px;
+padding:30px;
+border-radius:12px;
+}
+
+h2{
+text-align:center;
+margin-bottom:5px;
+}
+
+p{
+text-align:center;
+margin-bottom:5px;
+}
+
+h3{
+margin-top:15px;
+}
+
+label{
+display:block;
+margin-top:10px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:5px;
+border-radius:6px;
+}
+
+select{
+width:100%;
+padding:10px;
+margin-top:5px;
+border-radius:6px;
+}
+
+.info{
+display:flex;
+gap:10px;
+}
+
+.info div{
+width:50%;
+}
+
+.radio{
+display:flex;
+gap:15px;
+margin-top:5px;
+}
+
+.checkbox{
+margin-top:15px;
+font-size:14px;
+}
+
+.checkbox input{
+   width:auto;
+   margin-right:6px;
+}
+
+button{
+padding:12px;
+width:100%;
+cursor:pointer;
+margin-top:15px;
+}
+
+.login{
+text-align:center;
+margin-top:15px;
+}
+
+.login a{
+color:blue;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Create an account</h2>
+<p>Fill the details below to register</p>
+<form>
+<h3>Personal Info</h3>
+<div class="info">
+<div>
+<label>First Name</label>
+<input type="text" name="firstname" placeholder="John">
+</div>
+<div>
+<label>Last Name</label>
+<input type="text" name="lastname" placeholder="Doe">
+</div>
+</div>
+<label>Email address</label>
+<input type="email"  name="email" placeholder="john@gmail.com" required>
+
+<label>password</label>
+<input type="password" name="password" placeholder="Min.8 Character" required>
+
+<label>Confirm password</label>
+<input type="password" name="confirmPassword" placeholder="Re-enter password" required>
+
+<h3>Addtional Details</h4>
+<div class="radio">
+<label>Gender</label>
+ <label><input type="radio" value="male">Male</label>
+ <label><input type="radio" value="Female">Female</label>
+ <label><input type="radio" value="other">other</label>
+ </div>
+ 
+ <label>Country</label>
+ <select name="Country">
+  <option>Select your country</option>
+  <option>India</option>
+  <option>Uk</option>
+  <option>Us</option>
+  </select>
+  
+  <div class="checkbox">
+  <label>
+  <input type="checkbox"> I agree to the Terms and conditions and privacy policy </label>
+  </div>
+  
+  <button type="submit">create account</button>
+  
+  </form>
+  <div class="login">
+  Already have an account?<a href="#">sign in</a>
+  </div>
+</div>
+
+</body>
+</html>
