@@ -1,0 +1,172 @@
+
+<html >
+<head>
+<title>Hotel Booking</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    }
+    header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:15px;
+    background: #1c1c1c;
+     }
+   .loft{
+    font-size: 25px;
+    color:blueviolet;
+    }
+    nav a{
+    text-decoration: none;
+    color:white;
+    font-size: 20px;
+    margin: 0 10px;
+        }   
+        
+    .phone{
+        font-size: 14px;
+       color:azure;
+        }
+        .hero{
+            background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvdGVsfGVufDB8fDB8fHww');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width:100%;
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            
+        }
+        .over{
+            text-align: center;
+            color:black;
+        }
+        .over h1{
+            font-size: 36px;
+            margin-bottom: 500px;
+        }
+        
+        .booking{
+            display: flex;
+            align-items: center;
+            gap:15px;
+            padding: 15px 20px;
+            border-radius: 50px;
+            position: absolute;
+            top:20%;
+            left:30%;
+        }
+        .field{
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+
+        }
+        .field input,.field select{
+            border:none;
+            outline:none;
+            padding:8px;
+            font-size: 14px;
+        }
+        .btn{
+            border:none;
+            padding:10px 20px;
+            border-radius:25px;
+            cursor:pointer;
+        }
+        .about-loft{
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .about-loft h1{
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        .about-loft h2{
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        .about-loft p{
+            margin-bottom: 30px;
+        }
+
+        .about-loft button{
+            background-color: black;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="loft">Loft City</div>
+    <nav>
+         <a href="#">Home</a>
+         <a href="./About.html">About us</a>
+         <a href="./booking.html">Booking</a>
+         <a href="#">Apartments</a>
+         <a href="#">Amenities</a> 
+         <a href="#">Contact us</a>
+    </nav>
+    <div class="phone">+1234567890</div>
+    </header>
+
+    <section class="hero">
+        <div class="over">
+            <h1>Feel at Home when you're Away </h1>
+        
+        <div class="booking">
+            <div class="field">
+            <label>Check-In</label>
+            <input type="date" placeholder="Check-In">
+            </div>
+            <div class="field">
+            <label>Check-out</label>
+            <input type="date" placeholder="Check-Out">
+            </div>
+            <div class="field">
+            <label>Adult</label>
+                <select name="Adult">
+                 <option>0</option>
+                 <option>1</option>
+                 <option>2</option>
+                 <option>3</option>
+                 <option>4</option>
+                 <option>5</option>
+                 </select>
+                </div>
+            <div class="field">
+            <label>kid</label>
+                <select name="Kid">
+                 <option>0</option>
+                 <option>1</option>
+                 <option>2</option>
+                 <option>3</option>
+                 <option>4</option>
+                 <option>5</option>
+                 </select>
+                 </div>
+                 <button class="btn">search</button>
+        </div>
+        </div>
+    </section>
+<section class="about-loft">
+    <div class="about">
+        <h1><center>WELCOME TO LOFT CITY</center></h1>
+        <h2>Urban Holiday Apartments in San Francisco</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur vero, fugit accusamus inventore perferendis iusto voluptas laudantium totam fugiat tenetur esse placeat ab consectetur exercitationem corrupti beatae ut numquam nemo animi mollitia deleniti. Sit, ea pariatur! Recusandae consequatur accusantium illum soluta unde voluptatibus! Accusamus nulla reiciendis officiis veritatis magni pariatur.
+        </p>
+       <button>BOOK NOW</button>
+    </div>
+</section>
+</body>
+</html>

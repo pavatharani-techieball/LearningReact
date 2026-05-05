@@ -1,0 +1,153 @@
+<html >
+<head>
+    <title>Room Booking</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background:cadetblue;
+}
+
+.container {
+    max-width: 900px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.booking-form {
+    text-align: left;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.row.full {
+    flex-direction: column;
+}
+
+.field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+input, select {
+    padding: 12px 15px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 14px;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background: #111;
+    color: #00c4c4;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
+<body>
+
+
+<div class="container">
+    <h1>Room Booking</h1>
+    <p class="subtitle">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in mi libero.
+        Quisque convallis, enim at venenatis tincidunt.
+    </p>
+
+    <form class="booking-form">
+
+        <div class="row">
+            <div class="field">
+                <label>First Name</label>
+                <input type="text" placeholder="E.g.priya">
+            </div>
+
+            <div class="field">
+                <label>Last Name</label>
+                <input type="text" placeholder="E.g.doe">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field">
+                <label>Mobile</label>
+                <input type="text" placeholder="E.g.+91345678900">
+            </div>
+
+            <div class="field">
+                <label>Email</label>
+                <input type="email" placeholder="E.g.priya@gmail.com">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field">
+                <label>Check-In</label>
+                <input type="text" placeholder="E.g.MM/DD/YYYY">
+            </div>
+
+            <div class="field">
+                <label>Check-Out</label>
+                <input type="text" placeholder="E.g.MM/DD/YYYY">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field">
+                <label>Adult</label>
+                <select>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Kid</label>
+                <select>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                </select>
+            </div>
+        </div>
+
+        
+        <button class="btn">Book Now</button>
+
+    </form>
+</div>
+
+</body>
+</html>
