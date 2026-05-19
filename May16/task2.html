@@ -1,0 +1,221 @@
+<html>
+<head>	
+<style>
+.top{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:20px;
+}
+#taskForm{
+text-align:center;
+margin-top:15px;
+}
+#search{
+width:600px;
+height:35px;
+}
+#taskInput{
+width:400px;
+height:35px;
+}
+#priority{
+height:35px;
+}
+#submitBtn,
+#showBtn{
+height:35px;
+}
+.container{
+display:flex;
+justify-content:center;
+gap:150px;
+margin-top:20px;
+}
+.mainContainer{
+display:flex;
+justify-content:center;
+gap:150px;
+margin-top:20px;
+}
+</style>
+</head>
+<body>
+<div class="top">
+<input type="text" id="search" placeholder="search">
+<button id="showBtn">+</button>
+</div>
+<div id="taskForm" hidden>
+<br><br>
+<input type="text" id ="taskInput" placeholder="add task">
+<select id="priority">
+<option value="low">low</option>
+<option value="medium">medium</option>
+<option value="high">high</option>
+</select>
+<button id="submitBtn"> submit </button>
+</div>
+<div class="container">
+<h3>Todo:
+<span id="todoCount">0</span></h3>
+<h3>indiv:
+<span id="indivCount">0</span></h3>
+<h3>Inprogress:
+<span id="progressCount">0</span></h3>
+<h3>completed:
+<span id="doneCount">0</span></h3>
+</div>
+<hr>
+<div class="mainContainer">
+<div>
+<h2>Todo</h2>
+<div id="todoList"></div>
+</div>
+<div>
+<h2>Indiv</h2>
+<div id="indivList"></div>
+</div>
+<div>
+<h2>Inprogress</h2>
+<div id="progressList"></div>
+</div>
+<div>
+<h2>completed</h2>
+<div id="doneList"></div>
+</div>
+</div>
+<script>
+const tasks=[];
+const search=document.getElementById("search");
+const showBtn=document.getElementById("showBtn");
+const taskForm=document.getElementById("taskForm");
+const taskInput=document.getElementById("taskInput");
+const priority=document.getElementById("priority");
+const submitBtn=document.getElementById("submitBtn");
+const todoCount=document.getElementById("todoCount");
+const indivCount=document.getElementById("indivCount");
+const progressCount=document.getElementById("progressCount");
+const doneCount=document.getElementById("doneCount");
+const todoList=document.getElementById("todoList");
+const indivList=document.getElementById("indivList");
+const progressList=document.getElementById("progressList");
+const doneList=document.getElementById("doneList");
+showBtn.addEventListener("click",()=>{
+ taskForm.hidden = !taskForm.hidden;
+});
+submitBtn.addEventListener("click",()=>{
+tasks.push({
+ title:taskInput.value,
+ priority:priority.value,
+ status:"todo"
+ });
+showTask(tasks);
+taskInput.value="";
+});
+function showTask(data){
+todoList.innerHTML="";
+indivList.innerHTML="";
+progressList.innerHTML="";
+doneList.innerHTML="";
+let todo=0;
+let indiv=0;
+let progress=0;
+let done=0;
+data.forEach((task,index)=>{
+const div= document.createElement("div");
+if(task.status =="todo"){
+div.innerHTML = `
+<p><b>${task.title}</b></p>
+<p>${task.priority}</p>
+<button onclick="right(${index})"> ->
+</button>
+<button onclick="deleteTask(${index})"> X
+</button>
+<hr>`
+todoList.append(div);
+todo++;
+}
+else if(task.status =="indiv"){
+div.innerHTML =`
+<p><b>${task.title}</b><p>
+<p>${task.priority}</p>
+<button onclick="left(${index})"> <-
+</button>
+<button onclick="right(${index})"> ->
+</button>
+<button onclick="deleteTask(${index})"> X
+</button>
+<hr>`;
+indivList.append(div);
+indiv++;
+}
+else if(task.status =="progress"){
+div.innerHTML = `
+<p><b>${task.title}</b></p>
+<p>${task.priority}</p>
+<button onclick="left(${index})"> <-
+</button>
+<button onclick="right(${index})"> ->
+</button>
+<button onclick="deleteTask(${index})"> X
+</button>
+<hr>`;
+progressList.append(div);
+progress++;
+}
+else{
+div.innerHTML = `
+<p>
+<b>${task.title}</b></p>
+<p>${task.priority}</p>
+<button onclick="left(${index})"> <-
+</button>
+<button onclick="deleteTask(${index})"> X
+</button>
+<hr>`;
+doneList.append(div);
+done++;
+}
+});
+todoCount.innerHTML=todo;
+indivCount.innerHTML=indiv;
+progressCount.innerHTML=progress;
+doneCount.innerHTML=done;
+}
+function right(index){
+if(tasks[index].status =="todo"){
+tasks[index].status ="indiv";
+}
+else if(tasks[index].status =="indiv"){
+tasks[index].status="progress";
+}
+else if(tasks[index].status =="progress"){
+tasks[index].status = "done";
+}
+showTask(tasks);
+}
+function left(index){
+if(tasks[index].status =="done"){
+tasks[index].status ="progress";
+}
+else if(tasks[index].status =="progress"){
+tasks[index].status ="indiv";
+}
+else if(tasks[index].status=="indiv"){
+tasks[index].status="todo";
+}
+showTask(tasks);
+}
+search.addEventListener("input",()=>{
+const value= search.value.toLowerCase();
+const filtered=tasks.filter((task)=>{
+return task.title.toLowerCase().includes(value);
+});
+showTask(filtered);
+});
+function deleteTask(index){
+tasks.splice(index,1);
+showTask(tasks);
+}
+</script>
+</body
