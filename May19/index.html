@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>user Management Dashboard</h1>
+    <input type="text" id="searchInput" placeholder="search user">
+    <h2>Add user</h2>
+    <form id="userForm">
+        <input type="text" id="name" placeholder="enter name" required>
+        <input type="email" id="email" placeholder="enter email" required>
+        <input type="text" id="company" placeholder="enter company" required>
+        <button type="submit">add user</button>
+    </form>
+    <p id="loading"></p>
+    <div id="userContainer"></div>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
