@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Student Management System</h1>
+    <input type="text" id="search" placeholder="search">
+    <select id="filter">
+        <option value="all">all students</option>
+        <option value="passed">passed students</option>
+        <option value="failed">failed students</option>
+        <option value="topper">topper students</option>
+    </select>
+    <select id="sort">
+        <option value="default">sort</option>
+        <option value="name">name a-z</option>
+        <option value="marks">marks high-low</option>
+        <option value="age">age low-high</option>
+    </select>
+    <h2>add students</h2>
+    <form id="studentForm">
+        <input type="text" id="name" placeholder="name" required>
+        <input type="number" id="age" placeholder="age">
+        <input type="text" id="gender" placeholder="gender">
+        <input type="text" id="course" placeholder="course">
+        <input type="email" id="email" placeholder="email">
+        <input type="number" id="marks" placeholder="marks">
+        <button type="submit">save</button>
+    </form>
+    <button id="clearAll">clear all</button>
+    <h3 id="loading"></h3>
+    <div id="students"></div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>

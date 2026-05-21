@@ -1,0 +1,44 @@
+{
+    "students":[
+    {
+      "name": "Arun",
+      "age": 20,
+      "gender": "Male",
+      "marks": 85,
+      "course": "JavaScript",
+      "email": "arun@gmail.com"
+    },
+    {
+      "name": "Meena",
+      "age": 21,
+      "gender": "Female",
+      "marks": 92,
+      "course": "React",
+      "email": "meena@gmail.com"
+    },
+    {
+      "name": "Kavin",
+      "age": 19,
+      "gender": "Male",
+      "marks": 76,
+      "course": "Node JS",
+      "email": "kavin@gmail.com"
+    },
+    {
+      "name": "Divya",
+      "age": 22,
+      "gender": "Female",
+      "marks": 95,
+      "course": "Python",
+      "email": "divya@gmail.com"
+    },
+    {
+      "name": "Rahul",
+      "age": 20,
+      "gender": "Male",
+      "marks": 64,
+      "course": "MongoDB",
+      "email": "rahul@gmail.com"
+    }
+  ]
+}
